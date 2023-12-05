@@ -1,0 +1,24 @@
+.container {
+    overflow-y: auto;
+    /* Добавляем вертикальную прокрутку, если содержимое не помещается */
+    scrollbar-width: thin;
+    /* Тонкий скроллбар */
+    scrollbar-color: gray lightgray;
+    /* Цвет скроллбара и его трека */
+}
+
+/* Скрыть стрелки у браузерного скроллбара */
+.container::-webkit-scrollbar {
+    width: 6px;
+    /* Ширина скроллбара */
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: gray;
+    /* Цвет скроллбара */
+}
+
+.container::-webkit-scrollbar-track {
+    background-color: lightgray;
+    /* Цвет трека скроллбара */
+}

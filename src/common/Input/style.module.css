@@ -1,0 +1,37 @@
+/* Стили для Input */
+.smallContainer {
+    width: 250px;
+}
+
+.autoContainer {
+    width: auto;
+}
+
+.input {
+    border: 1px solid;
+    /* Исходная обводка */
+    transition: border-color 0.3s ease;
+    height: 30px;
+    width: 100%;
+    /* Плавное изменение цвета при наведении */
+}
+
+
+.input:hover {
+    border-color: #958b8b;
+    /* Серый цвет при наведении */
+}
+
+/* Стили для Label */
+.label {
+    font-weight: bold;
+    /* Жирный шрифт */
+    font-family: Arial, sans-serif;
+    /* Укажите нужный шрифт */
+}
+
+/* Стили для ErrorText */
+.errorText {
+    color: red;
+    /* Красный текст для сообщения об ошибке */
+}

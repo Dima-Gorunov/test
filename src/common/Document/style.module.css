@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    /* Устанавливаем прозрачную границу */
+    box-shadow: 0px 0px 2px 1px gray;
+    /* Добавляем размытую тень */
+    margin-bottom: 20px;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.head {
+    cursor: pointer;
+    display: flex;
+    padding: 15px;
+    justify-content: space-between;
+    height: 50px;
+    background-color: springgreen;
+    border-radius: 3px;
+}
+
+
+
+.body {}
+
+.body_disabled {
+    display: none;
+}
+
+.body_active {
+    z-index: 1;
+    background-color: white;
+    box-shadow: inset -1px 3px 5px 0px gray;   
+    padding: 15px;
+    display: block;
+    transition: .5 ease;
+}
