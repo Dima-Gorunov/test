@@ -14,7 +14,6 @@ import { changeInput, changeSelect } from "@store/slice/SearchFormSlice";
 import { getDocumentsThunk, setActive } from "@store/slice/DocumentSlice";
 import { useEffect, useState } from "react";
 import { getDocByFilter } from "@store/selectors/FilterSel";
-import { getDocuments } from "@store/selectors/DocumentsSel";
 
 function App() {
   const [screenHeight, setScreenHeight] = useState(window.innerHeight);
@@ -23,21 +22,18 @@ function App() {
     const handleResize = () => {
       setScreenHeight(window.innerHeight);
     };
-
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  
+
   const dispatch = useDispatch();
   const formInputs = useSelector(getAllSearchFields);
   const formSelects = useSelector(getAllSelects);
   const filterDocuments = useSelector(getDocByFilter);
   const handleInputChange = useInputHandler(changeInput);
   const handleSelectChange = useSelectChangeHandler(changeSelect);
-
   const handleClickDoc = useDocClickHandler(setActive);
   useEffect(() => {
     dispatch(getDocumentsThunk());
@@ -53,7 +49,11 @@ function App() {
           handleSelectChange={handleSelectChange}
         />
       </div>
-      <Documents screenHeight={screenHeight} Items={filterDocuments} handleClick={handleClickDoc} />
+      <Documents
+        screenHeight={screenHeight}
+        Items={filterDocuments}
+        handleClick={handleClickDoc}
+      />
     </div>
   );
 }

@@ -1,21 +1,15 @@
 import { DocumentProps } from "@interfaces/ui-interfaces";
-import { FC, ReactEventHandler, forwardRef, useCallback } from "react";
+import { FC, forwardRef } from "react";
 import styles from "./style.module.css";
-import { DocumentPayload } from "@/interfaces/documents";
-import { Arrow } from "../Arrow";
+import { Arrow } from "@common/Arrow";
 
 const Document: FC<DocumentProps> = forwardRef((props, fref) => {
   const { Item, handleClick } = props;
   const { _id, body, createdAt, isViewing, title, fileName } = Item;
 
-
   return (
     <div ref={fref} className={styles.container}>
-      <div
-        className={styles.head}
-        data-item-id={_id}
-        onClick={handleClick}
-      >
+      <div className={styles.head} data-item-id={_id} onClick={handleClick}>
         <span>{fileName}</span>
         <Arrow active={isViewing} />
       </div>

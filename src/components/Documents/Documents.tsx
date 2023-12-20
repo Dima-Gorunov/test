@@ -1,5 +1,5 @@
 import { DocumentsProps } from "@/interfaces/ui-interfaces";
-import { FC, memo, useLayoutEffect } from "react";
+import { FC, memo } from "react";
 import { Document } from "@common/Document";
 import Preloader from "@/common/Preloader/Preloader";
 import styles from "./style.module.css";
